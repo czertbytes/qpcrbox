@@ -1,0 +1,95 @@
+<div ng-controller="AB7300Ctrl">
+    <h3>AB7300</h3>
+    <p>This computation is for AB7300 machine ... </p>
+
+<!--    <div class="alert alert-error fade in" ng-show="rateLimitExceed">-->
+    <div class="alert alert-error fade in">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4>Free Quota Exceeded!</h4>
+        Right now you can't do computation. Come back after {{rateLimitReset}}. Consider upgrading to Premium program which has unlimited computation quota.
+    </div>
+
+    <div class="alert alert-info fade in">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        Computation will start when you copy text or drag and drop CSV file in text area
+    </div>
+
+
+    <div>
+        <textarea id="qpcrData" file-upload ng-model="qpcrData" rows="8"></textarea>
+    </div>
+
+    <div ng-show="showMockGeneSelection">
+        <select ng-model="mock" ng-options="d.id as d.name for d in genes" ng-change="compute()">
+            <option value="">-- chose mock target gene --</option>
+        </select>
+    </div>
+
+    <div class="infobox">
+        <p id="rq"></p>
+        <p id="err"></p>
+    </div>
+    <script>
+        var infobox = d3.select(".infobox");
+        infobox.style("display", "none");
+
+        function barMouseOver(d) {
+            d3.select(".infobox").style("display", "block");
+            d3.select("p#rq").text("RQ: " + d.value);
+            d3.select("p#err").text("Err: " + d.error);
+        }
+
+        function barMouseOut() {
+            d3.select(".infobox").style("display", "none");
+        }
+    </script>
+
+    <div id="results">
+        <p>Save results</p>
+        <div class="btn-group">
+            <button class="btn">JSON</button>
+            <button class="btn">XML</button>
+            <button class="btn">Clean CSV</button>
+            <button class="btn">Office Open XML</button>
+            <button class="btn">OpenDocument</button>
+        </div>
+
+        <section ng-repeat="(detectorName,detector) in expData.Detectors">
+            <table with-chart class="table table-condensed">
+                <caption>Detector {{detectorName}}</caption>
+                <thead>
+                    <tr>
+                        <th>Sample</th>
+                        <th>Raw values</th>
+                        <th>Values</th>
+                        <th>Mean</th>
+                        <th>StdDev</th>
+                        <th>DCt</th>
+                        <th>DdCt</th>
+                        <th>DdCtErr</th>
+                        <th>RQ</th>
+                        <th>RQErr</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="(geneName,gene) in detector">
+                        <td>{{geneName}}</td>
+                        <td>{{gene.RawValues}}</td>
+                        <td>{{gene.Values}}</td>
+                        <td>{{gene.Mean | number: i}}</td>
+                        <td>{{gene.StdDev | number: i}}</td>
+                        <td>{{gene.DCt | number: i}}</td>
+                        <td>{{gene.DdCt | number: i}}</td>
+                        <td>{{gene.DdCtErr | number: i}}</td>
+                        <td>{{gene.RQ | number: i}}</td>
+                        <td>{{gene.RQErr | number: i}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr>
+        </section>
+
+    </div>
+
+</div>

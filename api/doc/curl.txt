@@ -1,0 +1,17 @@
+POST AB7300
+curl -v -X POST -H "Content-Type: plain/text" --data-binary @in.csv "http://api.qpcrbox.com/qpcr/ab7300?mock=Mock"
+curl -v -X POST -H "Content-Type: plain/text" --data-binary @in.csv "http://localhost:8080/qpcr/ab7300?mock=%2B"
+
+
+GET EXPERIMENT
+curl -v  -H "Accept: application/json" "http://localhost:8080/experiment/64b72ebb8d8d6ab2790203dbb2970c3162cd5c0c58fa0882ec326565d158339b"
+curl -v  -H "Accept: application/xml" "http://localhost:8080/experiment/64b72ebb8d8d6ab2790203dbb2970c3162cd5c0c58fa0882ec326565d158339b"
+curl -v  -H "Accept: text/csv" "http://localhost:8080/experiment/64b72ebb8d8d6ab2790203dbb2970c3162cd5c0c58fa0882ec326565d158339b"
+curl -v  -H "Accept: application/vnd.oasis.opendocument.spreadsheet" "http://localhost:8080/experiment/64b72ebb8d8d6ab2790203dbb2970c3162cd5c0c58fa0882ec326565d158339b"
+curl -v  -H "Accept: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" "http://localhost:8080/experiment/64b72ebb8d8d6ab2790203dbb2970c3162cd5c0c58fa0882ec326565d158339b"
+
+curl -v  -H "Accept: text/csv" "http://api.fastqpcr.com/experiment/4351a12afbee854d61510a2f165f084b02d4883df7792e42a469b16e2b0df1f1"
+
+
+GET RATE LIMIT
+curl -v "http://localhost:8080/v1/rate_limit"

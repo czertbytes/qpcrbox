@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="qpcrApp">
+<head>
+    <meta charset="utf-8">
+    <title>QPCRBox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QPCRBox">
+    <meta name="author" content="Daniel Hodan <daniel.hodan@czertbytes.de>">
+    <link href="css/assets/bootstrap.css" rel="stylesheet">
+    <link href="css/assets/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/charts.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico">
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="index.html"><span class="color-highlight">QPCR</span>Box</a>
+                <div class="nav-collapse collapse" style="height: 0px; ">
+                    <ul class="nav pull-right">
+                        <li class="active"><a href="http://www.qpcrbox.com">Home</a></li>
+                        <li><a href="http://www.qpcrbox.com/compute">Compute</a></li>
+                        <li><a href="http://www.qpcrbox.com/support">Support</a></li>
+                        <li><a href="http://www.qpcrbox.com/contact">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="well well-large">
+                <h1>QPCT results analysis in less than 10 seconds</h1>
+                <h2>Don't waste your time on bad results!</h2>
+                <p><a href="http://www.qpcrbox.com/compute" class="btn btn-primary btn-large">Try now for free!</a></p>
+            </div>
+            <div id="myCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="img/featured/1.jpg" alt="">
+                        <div class="carousel-caption">
+                            <h4>Old way</h4>
+                            <p>Stop using crappy magic excel formulas or super-complicated big suites which just doesn't fit your needs!</p>
+                        </div>
+                    </div>
+                    <div class="item next">
+                        <img src="img/featured/2.jpg" alt="">
+                        <div class="carousel-caption">
+                            <h4>QPCRBox way</h4>
+                            <p>No installation, no heavy client application - just web browser and drop you file in input box.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="span12">
+                <h3>The Introduction</h3>
+                <p>QPCRBox is a web application that helps anybody do anonymous, fast and super-simple QPCR results analysis. When you use QPCRBox we don't require any registration or email to confirm your identity. We offer you free tool which helps you understand your results data in amazingly short time. The results can be saved on your computer and used in next computation.</p>
+                <p>All what you need is a modern browser, an Internet connection. The rest is done by us.</p>
+                <p>For advanced use we offer free public computation API which can be easily integrated into your computation process flow.</p>
+                <p>Be smart and fast!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4">
+                <h3>Secure</h3>
+                <p>You and Your data are super-important for us. We don't need your registration or email! The trust you put in us should be based on facts that communication (as the data) are sent to us and from us SSL encrypted so nobody expect you and our server can see them.</p>
+                <p>We don't store results of your computation longer than you need! The data are only in computer temporary memory and after 1 hour will be erased without any chance to get back again. We believe that you know better where and how to store them.</p>
+                <a href="#" class="btn btn-info">Details</a>
+            </div>
+            <div class="span4">
+                <h3>Smart</h3>
+                <p>Our philosophy is to offer you non-invasive, easy to use but expressive application. Just drag and drop data file in textarea and we will do the rest. Table and charts will you help better understand what are your QPCR results data.</p>
+                <p>Changes in input data will automatically update tables and charts so you can try and play more options.</p>
+                <a href="#" class="btn btn-info">Details</a>
+            </div>
+            <div class="span4">
+                <h3>Save results</h3>
+                <p>With computation in browser we don't stop - actually we start! You can save results in several formats and integrate in your next computation flow.</p>
+                <p>Currently we offer export to following data file formats:</p>
+                <ul>
+                    <li>JSON</li>
+                    <li>XML</li>
+                    <li>Clean CSV</li>
+                    <li>Office Open XML (Microsoft Excel)</li>
+                    <li>OpenDocument (LibreOffice Calc)</li>
+                </ul>
+                <a href="#" class="btn btn-info">Details</a>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="span12">
+                <h3>Our computations are trusted by following organizations.</h3>
+                <div></div>
+            </div>
+        </div>
+        <hr>
+        <footer class="row">
+            <p>QPCRBox.com <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a><br/>2013 © QPCRBox.com | info@czertbytes.de<br></p>
+        </footer>
+    </div>
+    <script src="js/assets/jquery-1.8.3.min.js"></script>
+    <script src="js/assets/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $('.carousel').carousel('cycle');
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-37943275-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+</html>
